@@ -7,15 +7,14 @@ public class LeapYearChecker {
         System.out.println("Введите год:");
         int inputYear = scanner.nextInt();
 
-        if (isYearLeap(inputYear)) {
-            System.out.printf("%d - високосный год", inputYear );
-
+        if (isLeapYear(inputYear)) {
+            System.out.printf("%d - високосный год", inputYear);
         } else {
             System.out.printf("%d - не високосный год", inputYear);
         }
     }
 
-    private static boolean isYearLeap(int year) {
-        return year % 4 == 0 || (year % 100 == 0 && year % 400 == 0);
+    private static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
     }
 }
